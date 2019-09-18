@@ -1,5 +1,5 @@
 <?php
-require_once('../system/classes/interfaces/Settings.php');
+// require_once('../system/classes/interfaces/Settings.php');
 
 class SOSController implements Settings {
 	
@@ -8,5 +8,11 @@ class SOSController implements Settings {
 		$this->view = $view;
 	}
 	
+	public function test() {
+		
+	}
+	
+	private $model;
+	private $view;	
 }
 ?>
