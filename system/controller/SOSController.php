@@ -25,15 +25,18 @@ class SOSController implements Settings {
 		if(empty($path)) {
 			$this->view->setTemplate(SOSView::HOME);
 			$this->model->update_state($path, null);
-		} else if($tail === "/") {
-			
-			
-			
+		} else if($tail === "/") { // Topic			
 			if($_SERVER['REQUEST_METHOD'] === 'PUT') {
 				$this->view->headerOnly('405 Method Not Allowed');
-			}
-			$this->view->setTemplate(SOSView::TOPIC);
-			$this->model->update_state($path, SOSModel::TOPIC);
+			}		
+			
+			// Need to change the update_state method
+			// so that the second argument is not required
+			if($this->model->update_state($path, SOSModel::TOPIC)) {
+				$this->view->setTemplate(SOSView::TOPIC);
+			} else {
+				// Error
+			}			
 		} else {
 			if(strcmp($path, Settings::ADMIN_LOGIN_PAGE) == 0) {
 				$this->token();
