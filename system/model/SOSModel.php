@@ -8,6 +8,16 @@ class SOSModel implements DBQueries, Settings {
 		$this->error = false;
 	}
 	
+	/**
+	 * Fetch the data for the home page
+	 * of this web application.
+	 */
+	public function home() {
+
+	}
+	
+	
+	
 }
 
 
