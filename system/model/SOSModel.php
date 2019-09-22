@@ -16,6 +16,10 @@ class SOSModel implements DBQueries, Settings {
 
 	}
 	
+	public function deleteArticle($path) {
+		
+	}
+	
 	
 	
 }
