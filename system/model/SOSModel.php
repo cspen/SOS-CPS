@@ -33,6 +33,10 @@ class SOSModel implements DBQueries, Settings {
 		
 	}
 	
+	public function category($path) {
+		
+	}
+	
 }
 
 
