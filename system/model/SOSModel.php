@@ -37,6 +37,9 @@ class SOSModel implements DBQueries, Settings {
 		
 	}
 	
+	private $dbconn;
+	private $error;
+	
 }
 
 
