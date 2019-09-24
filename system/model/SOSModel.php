@@ -24,7 +24,14 @@ class SOSModel implements DBQueries, Settings {
 		
 	}
 	
-	
+	/**
+	 * Update an existing article. If
+	 * the article doesn't exist, no
+	 * action is taken.
+	 */
+	public function updateArticle($path, $values) {
+		
+	}
 	
 }
 
