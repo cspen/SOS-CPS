@@ -36,8 +36,11 @@ class SOSModel implements DBQueries, Settings {
 		
 	}
 	
+	public function deleteCategory() {
+		
+	}
+	
 	private $dbconn;	
 }
-
 
 ?>
