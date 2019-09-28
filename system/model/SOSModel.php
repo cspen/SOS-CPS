@@ -40,6 +40,10 @@ class SOSModel implements DBQueries, Settings {
 		
 	}
 	
+	public function validate_login($email, $password) {
+		
+	}
+	
 	private $dbconn;	
 }
 
