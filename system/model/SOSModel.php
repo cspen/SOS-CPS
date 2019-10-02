@@ -32,6 +32,10 @@ class SOSModel implements DBQueries, Settings {
 		
 	}
 	
+	public function saveArticle($path, $values) {
+		
+	}
+	
 	public function category($path) {
 		
 	}
@@ -40,16 +44,17 @@ class SOSModel implements DBQueries, Settings {
 		
 	}
 	
-	public function validateLogin($email, $password) {
+	public function login($email, $password) {
 		
-	}
-	
+	}	
 	
 	public function sideMenu() {
 		
 	}
 	
-	
+	public function editorMenu() {
+		
+	}
 	
 	private $dbconn;	
 }
