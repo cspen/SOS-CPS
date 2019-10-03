@@ -17,9 +17,13 @@ class SOSController implements Settings {
 		$path = str_replace(Settings::APP_URL, "", $_SERVER['REQUEST_URI']);
 		$tail = substr($_SERVER['REQUEST_URI'], -1);
 		
-		if(empty($path)) { // Home Page
-			$this->view->setTemplate(SOSView::HOME);
-			$this->model->update_state($path, null);
+		if(empty($path)) { // Home Page			
+			try {
+				$this->model->home();
+				$this->view->setTemplate(SOSView::HOME);
+			} catch(Exception $e) {
+				// Need to develop error handling
+			}
 		} else if($tail === "/") { // Category - List of Articles			
 			if($_SERVER['REQUEST_METHOD'] === 'PUT') {
 				$this->view->headerOnly('405 Method Not Allowed');
