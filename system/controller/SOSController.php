@@ -17,15 +17,10 @@ class SOSController implements Settings {
 		$path = str_replace(Settings::APP_URL, "", $_SERVER['REQUEST_URI']);
 		$tail = substr($_SERVER['REQUEST_URI'], -1);
 		
-		// Need to change the logic flow from
-		// Controller->Model->View to
-		// Controller->Model->Controller->View
-		
-		// Set the view
-		if(empty($path)) {
+		if(empty($path)) { // Home Page
 			$this->view->setTemplate(SOSView::HOME);
 			$this->model->update_state($path, null);
-		} else if($tail === "/") { // Topic			
+		} else if($tail === "/") { // Category - List of Articles			
 			if($_SERVER['REQUEST_METHOD'] === 'PUT') {
 				$this->view->headerOnly('405 Method Not Allowed');
 			}		
@@ -37,7 +32,7 @@ class SOSController implements Settings {
 			} else {
 				// Error
 			}			
-		} else {
+		} else { // Article
 			if(strcmp($path, Settings::ADMIN_LOGIN_PAGE) == 0) {
 				$this->token();
 				$this->model->login($_SESSION['token']);
