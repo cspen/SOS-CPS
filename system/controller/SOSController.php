@@ -29,11 +29,10 @@ class SOSController implements Settings {
 				$this->view->headerOnly('405 Method Not Allowed');
 			}		
 			
-			// Need to change the update_state method
-			// so that the second argument is not required
-			if($this->model->update_state($path, SOSModel::TOPIC)) {
+			try {
+				$this->model->topic($path);
 				$this->view->setTemplate(SOSView::TOPIC);
-			} else {
+			} catch(Exception $e) {
 				// Error
 			}			
 		} else { // Article
