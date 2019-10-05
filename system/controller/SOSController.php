@@ -37,15 +37,21 @@ class SOSController implements Settings {
 			}			
 		} else { // Article
 			if(strcmp($path, Settings::ADMIN_LOGIN_PAGE) == 0) {
+				// Login page - shows login form
 				$this->token();
 				$this->model->login($_SESSION['token']);
 				$this->view->setTemplate(SOSView::ADMIN_LOGIN);
 			} else if(strcmp($path, Settings::SYS_OPS) == 0) {
+				// Admin operation - Create, Update, Delete
 				$this->system_operation($tail);
 				exit;
 			} else {
-				$this->view->setTemplate(SOSView::ARTICLE);
-				$this->model->update_state($path, SOSModel::ARTICLE);
+				try {
+					$this->model->article($path);
+					$this->view->setTemplate(SOSView::ARTICLE);					
+				} catch(Exception $e) {
+					// Error
+				}
 			}
 		}
 	}
