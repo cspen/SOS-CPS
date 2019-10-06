@@ -56,6 +56,13 @@ class SOSController implements Settings {
 		}
 	}
 	
+	/**
+	 * 
+	 */
+	private function token() {
+		
+	}
+	
 	private $model;
 	private $view;	
 }
