@@ -11,3 +11,7 @@ the request and, if necessary, invokes the model. The model either returns
 the requested data, returns the data is unavailable, or throws an exception.
 Logic flow then returns to the controller. The controller then invokes the
 view and logic flows ends with a response being sent to the client.
+
+Controller: Accepts all input. All application logic goes here
+Model: Basically an API for the database
+View: Manages Output and "Look and Feel"
