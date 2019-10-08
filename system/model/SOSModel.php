@@ -12,7 +12,7 @@ class SOSModel implements DBQueries, Settings {
 	 * of this web application.
 	 */
 	public function home() {
-
+		
 	}
 	
 	public function article($path) {
@@ -53,6 +53,10 @@ class SOSModel implements DBQueries, Settings {
 	}
 	
 	public function editorMenu() {
+		
+	}
+	
+	public function changeUserSetting($userID, $setting, $value) {
 		
 	}
 	
