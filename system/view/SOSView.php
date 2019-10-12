@@ -6,9 +6,18 @@ class SOSView implements Settings {
 		$this->template = $this::HOME; // Default
 	}
 	
-	public function output($template, $Content) {
+	/**
+	 * 
+	 * @param String $template reference to local constant
+	 * @param String $Content the content of the page
+	 * @param String $navMenu navigation menu
+	 * @param String $feature special featured content
+	 * @param String $footer page footer
+	 */
+	public function output($template, $Content, $navMenu, $feature, $footer) {
 		
 	}
+	
 	
 	
 	
