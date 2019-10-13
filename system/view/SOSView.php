@@ -7,23 +7,35 @@ class SOSView implements Settings {
 	}
 	
 	/**
-	 * 
-	 * @param String $template reference to local constant
-	 * @param String $Content the content of the page
-	 * @param String $navMenu navigation menu
-	 * @param String $feature special featured content
-	 * @param String $footer page footer
+	 * Send the response to the client.
 	 */
-	public function output($template, $Content, $navMenu, $feature, $footer) {
+	public function output() {
+		
+	}	
+	
+	public function setPageTemplate($template) {
 		
 	}
 	
+	public function setPageContent($content) {
+		
+	}
 	
+	public function setPageNavigationMenu($menu) {
+		
+	}
 	
+	public function setPageFeature($feature) {
+		
+	}
 	
+	public function setPageFooter($footer) {
+		
+	}
+		
 	private $template;		// The template for the page
 	
-	private const HOME = "Template/home_template.php";
+	const HOME = "Template/home_template.php";
 }
 
 ?>
