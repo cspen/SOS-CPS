@@ -44,7 +44,12 @@ class SOSView implements Settings {
 	private $feature;		// Page feature
 	private $footer;		// Page footer
 	
-	const HOME = "Template/home_template.php";
+	// Default view settings
+	const DEFAULT_PAGE_TEMPLATE = "Template/home_template.php";
+	const DEFAULT_PAGE_CONTENT = 0;
+	const DEFAULT_PAGE_MENU = 0;
+	const DEFAULT_PAGE_FEATURE = 0;
+	const DEFAULT_PAGE_FOOTER = 0;
 }
 
 ?>
