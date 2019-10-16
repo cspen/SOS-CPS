@@ -3,7 +3,12 @@
 class SOSView implements Settings {
 	
 	public function __construct() {
-		$this->template = $this::HOME; // Default
+		// Defaults
+		$this->template = $this::HOME;
+		$this->content = 0;
+		$this->menu = 0;
+		$this->feature = 0;
+		$this->footer = 0;
 	}
 	
 	/**
