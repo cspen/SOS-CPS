@@ -1,4 +1,5 @@
 <?php
+// require_once('../Settings.php');
 
 class SOSView implements Settings {
 	
@@ -8,7 +9,7 @@ class SOSView implements Settings {
 		$this->content = 0;
 		$this->menu = 0;
 		$this->feature = 0;
-		$this->footer = 0;
+		$this->footer = $this::DEFAULT_PAGE_FOOTER;
 	}
 	
 	/**
@@ -16,6 +17,18 @@ class SOSView implements Settings {
 	 */
 	public function output() {
 		
+		
+		$pageTitle = "504 Internal Server Error";
+		$description = "Internal Server Error";
+		$contentTitle = "504 Internal Server Error";
+		$contentBody = "Oops! Something went wrong.";
+		$sideMenuTitle = "SIDE MENU TITLE";
+		$sideMenu = null;
+		// $footer = $this->footer;
+		
+		require_once($this->template);
+		require_once($this->footer);
+		echo $html;
 	}	
 	
 	public function setPageTemplate($template) {
@@ -45,11 +58,11 @@ class SOSView implements Settings {
 	private $footer;		// Page footer
 	
 	// Default view settings
-	const DEFAULT_PAGE_TEMPLATE = "Template/home_template.php";
-	const DEFAULT_PAGE_CONTENT = 0;
-	const DEFAULT_PAGE_MENU = 0;
-	const DEFAULT_PAGE_FEATURE = 0;
-	const DEFAULT_PAGE_FOOTER = 0;
+	const HOME = "templates/home_template.php";
+	const DEFAULT_PAGE_CONTENT = "";
+	const DEFAULT_PAGE_MENU = "";
+	const DEFAULT_PAGE_FEATURE = "";
+	const DEFAULT_PAGE_FOOTER = "templates/default_footer_template.php";
 }
 
 ?>
