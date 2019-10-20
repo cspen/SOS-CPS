@@ -15,24 +15,30 @@ class SOSView implements Settings {
 	/**
 	 * Send the response to the client.
 	 */
-	public function output() {
-		
-		
-		$pageTitle = "504 Internal Server Error";
-		$description = "Internal Server Error";
-		$contentTitle = "504 Internal Server Error";
-		$contentBody = "Oops! Something went wrong.";
+	public function output() {		
+		$pageTitle = "Page Title";
+		$description = "Page Description";
+		$contentTitle = "Content Title";
+		$contentBody = "Content Body";
 		$sideMenuTitle = "SIDE MENU TITLE";
 		$sideMenu = null;
-		// $footer = $this->footer;
 		
-		require_once($this->template);
+		// Load page footer
 		require_once($this->footer);
+		
+		// Load page template
+		require_once($this->template);
+		
+		// Display the page
 		echo $html;
 	}	
 	
 	public function setPageTemplate($template) {
 		$this->template = $template;
+	}
+	
+	public function setPageTitle($title) {
+		$this->title = $title;
 	}
 	
 	public function setPageContent($content) {
@@ -52,6 +58,7 @@ class SOSView implements Settings {
 	}
 		
 	private $template;		// The template for the page
+	private $title;			// Page title
 	private $content;		// Page content
 	private $menu;			// Site menu
 	private $feature;		// Page feature
