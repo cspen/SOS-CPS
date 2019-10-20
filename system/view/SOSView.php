@@ -41,6 +41,10 @@ class SOSView implements Settings {
 		$this->title = $title;
 	}
 	
+	public function setPageDescription($description) {
+		$this->description = $description;
+	}
+	
 	public function setPageContent($content) {
 		$this->content = $content;
 	}
@@ -59,6 +63,7 @@ class SOSView implements Settings {
 		
 	private $template;		// The template for the page
 	private $title;			// Page title
+	private $description;	// Page description (meta tag)
 	private $content;		// Page content
 	private $menu;			// Site menu
 	private $feature;		// Page feature
