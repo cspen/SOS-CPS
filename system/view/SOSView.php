@@ -31,7 +31,18 @@ class SOSView implements Settings {
 		
 		// Display the page
 		echo $html;
-	}	
+	}
+	
+	/**
+	 * Set all of the attributes for a page
+	 * (title, content, etc.) via a PageSettings
+	 * object.
+	 * 
+	 * @param Object $pageSettings settings for a page
+	 */
+	public function setPage($pageSettings) {
+		
+	}
 	
 	public function setPageTemplate($template) {
 		$this->template = $template;
