@@ -35,12 +35,12 @@ class SOSView implements Settings {
 	
 	/**
 	 * Set all of the attributes for a page
-	 * (title, content, etc.) via a PageSettings
+	 * (title, content, etc.) via a Page
 	 * object.
 	 * 
-	 * @param Object $pageSettings settings for a page
+	 * @param Object $page attributes of a page
 	 */
-	public function setPage($pageSettings) {
+	public function setPage($page) {
 		
 	}
 	
