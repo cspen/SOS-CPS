@@ -3,6 +3,7 @@
 class Page {
 	
 	public function __construct() {
+		$args = func_get_args();
 		
 	}
 
@@ -30,6 +31,35 @@ class Page {
 		$this->footer = $footer;
 	}
 	
+	public function getTemplate() {
+		return $this->template;
+	}
+	
+	public function getTitle() {
+		return $this->title;
+	}
+	
+	public function getDescription() {
+		return $this->description;
+	}
+	
+	public function getContent() {
+		return $this->content;
+	}
+	
+	public function getMenu() {
+		return $this->menu;
+	}
+	
+	public function getFeature() {
+		return $this->feature;
+	}
+	
+	public function getFooter() {
+		return $this->footer;
+	}
+	
+	private $template;		// The template for the page
 	private $title;			// Page title
 	private $description;	// Page description (meta tag)
 	private $content;		// Page content
