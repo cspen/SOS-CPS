@@ -4,8 +4,20 @@ class Page {
 	
 	public function __construct() {
 		$args = func_get_args();
+		$num = func_num_args();
+		if (method_exists($this,$f='__construct'.$num)) {
+			call_user_func_array(array($this,$f),$args);
+		}		
+	}
+	
+	function __construct7($template, $title, $description, $content,
+			$menu, $feature, $footer) {
 		
 	}
+	
+	
+	
+	
 
 	public function setTitle($title) {
 		$this->title = $title;
