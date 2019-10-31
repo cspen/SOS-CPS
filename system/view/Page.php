@@ -10,15 +10,37 @@ class Page {
 		}		
 	}
 	
-	function __construct7($template, $title, $description, $content,
-			$menu, $feature, $footer) {
-		
+	function __construct5($title, $description, $content,
+			$menu, $feature) {
+		$this->title;
+		$this->description;
+		$this->content;
+		$this->menu;
+		$this->feature;
 	}
 	
+	function __construct6($title, $description, $content,
+			$menu, $feature, $footer) {
+		$this->title;
+		$this->description;
+		$this->content;
+		$this->menu;
+		$this->feature;
+		$this->footer;
+	}
 	
+	function __construct7($template, $title, $description, $content,
+			$menu, $feature, $footer) {
+		$this->template;
+		$this->title;
+		$this->description;
+		$this->content;
+		$this->menu;
+		$this->feature;
+		$this->footer;
+	}	
 	
-	
-
+// Setters
 	public function setTitle($title) {
 		$this->title = $title;
 	}
@@ -43,6 +65,7 @@ class Page {
 		$this->footer = $footer;
 	}
 	
+// Getters
 	public function getTemplate() {
 		return $this->template;
 	}
@@ -71,13 +94,17 @@ class Page {
 		return $this->footer;
 	}
 	
-	private $template;		// The template for the page
+	// The template for the page
+	private $template = "templates/home_template.php";		
+	
 	private $title;			// Page title
 	private $description;	// Page description (meta tag)
 	private $content;		// Page content
 	private $menu;			// Site menu
 	private $feature;		// Page feature
-	private $footer;		// Page footer
+	
+	// Page footer
+	private $footer = "templates/default_footer_template.php";		
 }
 
 ?>
