@@ -1,5 +1,5 @@
 <?php
-// require_once('../system/classes/interfaces/Settings.php');
+require_once('../system/Settings.php');
 
 class SOSController implements Settings {
 	
@@ -18,7 +18,7 @@ class SOSController implements Settings {
 			echo '<br>'.$path.'<br>';
 			try {
 				$this->model->home();
-				$this->view->setTemplate(SOSView::HOME);
+				// $this->view->setTemplate(SOSView::HOME);
 			} catch(Exception $e) {
 				// Need to develop error handling
 			}
