@@ -48,7 +48,7 @@ class SOSController implements Settings {
 				// Show the article
 				try {
 					$this->model->article($path);
-					$this->view->setTemplate(SOSView::ARTICLE);					
+					// $this->view->setTemplate(SOSView::ARTICLE);					
 				} catch(Exception $e) {
 					// Error
 				}
