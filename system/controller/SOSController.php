@@ -15,7 +15,6 @@ class SOSController implements Settings {
 		
 		echo '<br>'.$path.'<br>';
 		if(empty($path)) { // Home Page	
-			echo '<br>'.$path.'<br>';
 			try {
 				$this->model->home();
 				// $this->view->setTemplate(SOSView::HOME);
