@@ -35,15 +35,18 @@ class SOSController implements Settings {
 		} else { // Article
 			echo '<br>ARTICLE</br>';
 			if(strcmp($path, Settings::ADMIN_LOGIN_PAGE) == 0) {
+				echo '<br>LOGIN</br>';
 				// Login page - shows login form
 				$this->token();
 				$this->model->login($_SESSION['token']);
 				$this->view->setTemplate(SOSView::ADMIN_LOGIN);
 			} else if(strcmp($path, Settings::SYS_OPS) == 0) {
+				echo '<br>ADMIN</br>';
 				// Admin operation - Create, Update, Delete
 				$this->system_operation($tail);
 				exit;
 			} else {
+				echo '<br>SHOW</br>';
 				// Show the article
 				try {
 					$this->model->article($path);
@@ -55,6 +58,13 @@ class SOSController implements Settings {
 		}
 	}
 		
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * Set session token for form validation
 	 * to prevent CSFR attack.
