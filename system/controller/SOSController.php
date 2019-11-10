@@ -12,9 +12,8 @@ class SOSController implements Settings {
 		$path = str_replace(Settings::APP_URL, "", $_SERVER['REQUEST_URI']);
 		$tail = substr($_SERVER['REQUEST_URI'], -1);
 		
-		
-		echo '<br>'.$path.'<br>';
 		if(empty($path)) { // Home Page	
+			echo '<br>HOME<br>';
 			try {
 				$this->model->home();
 				// $this->view->setTemplate(SOSView::HOME);
@@ -34,6 +33,7 @@ class SOSController implements Settings {
 				// Error
 			}			
 		} else { // Article
+			echo '<br>ARTICLE</br>';
 			if(strcmp($path, Settings::ADMIN_LOGIN_PAGE) == 0) {
 				// Login page - shows login form
 				$this->token();
