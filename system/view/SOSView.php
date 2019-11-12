@@ -15,13 +15,16 @@ class SOSView implements Settings {
 	/**
 	 * Send the response to the client.
 	 */
-	public function output() {		
-		$pageTitle = "Page Title";
+	public function output() {
+		$pageTitle = "*Page Title*";
 		$description = "Page Description";
 		$contentTitle = $pageTitle;
 		$contentBody = "Content Body";
 		$sideMenuTitle = "SIDE MENU TITLE";
 		$sideMenu = null;
+		
+		// Load default page css
+		require_once("styles/template.php");
 		
 		// Load page footer
 		require_once($this->footer);
@@ -44,41 +47,15 @@ class SOSView implements Settings {
 		
 	}
 	
-	public function setPageTemplate($template) {
-		$this->template = $template;
+	public function getPage() {
+		return $this->page;
 	}
 	
-	public function setPageTitle($title) {
-		$this->title = $title;
-	}
-	
-	public function setPageDescription($description) {
-		$this->description = $description;
-	}
-	
-	public function setPageContent($content) {
-		$this->content = $content;
-	}
-	
-	public function setPageNavigationMenu($menu) {
-		$this->menu = $menu;
-	}
-	
-	public function setPageFeature($feature) {
-		$this->feature = $feature;
-	}
-	
-	public function setPageFooter($footer) {
-		$this->footer = $footer;
+	public function signin($token) {
+		SOSView::ADMIN_LOGIN;
 	}
 		
-	private $template;		// The template for the page
-	private $title;			// Page title
-	private $description;	// Page description (meta tag)
-	private $content;		// Page content
-	private $menu;			// Site menu
-	private $feature;		// Page feature
-	private $footer;		// Page footer
+	
 	
 	// Default view settings
 	const HOME = "templates/home_template.php";
