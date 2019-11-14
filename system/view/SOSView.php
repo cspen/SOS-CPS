@@ -15,7 +15,11 @@ class SOSView implements Settings {
 	/**
 	 * Send the response to the client.
 	 */
-	public function output() {
+	public function output($object) {
+		if(!empty($object)) {
+			echo $object;
+		}
+		
 		$pageTitle = "*Page Title*";
 		$description = "Page Description";
 		$contentTitle = $pageTitle;
