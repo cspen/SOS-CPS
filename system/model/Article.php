@@ -6,7 +6,15 @@ class Article {
 		
 	}
 	
+	public function __construct() {
+		
+	}
+	
 // Getters
+
+	public function getId() {
+		return $this->id;
+	}
 
 	public function getTitle() {
 		return $this->title;
@@ -52,7 +60,8 @@ class Article {
 	
 
 // Fields
-
+	
+	private $id;
 	private $title;
 	private $description;
 	private $body;
