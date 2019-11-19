@@ -6,8 +6,20 @@ class Article {
 		
 	}
 	
-	public function __construct() {
-		
+	public function __construct($id, $title, $description, 
+		$body, $publishStatus, $publishDate, $creationDate,
+		$path, $parent, $etag, $lastModified) {
+			$this->id = $id;
+			$this->title = $title;
+			$this->description = $description;
+			$this->body = $body;
+			$this->publishStatus = $publishStatus;
+			$this->publishDate = $publishDate;
+			$this->creationDate = $creationDate;
+			$this->path = $path;
+			$this->parent = $parent;
+			$this->etag = $etag;
+			$this->lastModified = $lastModified;
 	}
 	
 // Getters
