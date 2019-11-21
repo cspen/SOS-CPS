@@ -3,10 +3,14 @@
 class Article {
 	
 	public function __construct() {
-		
+		$args = func_get_args();
+		$num = func_num_args();
+		if (method_exists($this,$f='__construct'.$num)) {
+			call_user_func_array(array($this,$f),$args);
+		}
 	}
 	
-	public function __construct($id, $title, $description, 
+	public function __construct11($id, $title, $description, 
 		$body, $publishStatus, $publishDate, $creationDate,
 		$path, $parent, $etag, $lastModified) {
 			$this->id = $id;
