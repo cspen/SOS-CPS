@@ -1,4 +1,12 @@
 <?php
+// Reference to file in local directory
+require_once 'DBQueries.php';
+require_once 'Article.php';
+
+// Reference to ../Settings.php but
+// apparently from the public folder
+require_once '../system/Settings.php';
+require_once '../system/utilities/DBConnection.php';
 
 class SOSModel implements DBQueries, Settings {
 	
@@ -12,11 +20,11 @@ class SOSModel implements DBQueries, Settings {
 	 * of this web application.
 	 */
 	public function home() {
-		
+		echo '<br>THIS IS THE MODEL HOME<br>';
 	}
 	
 	public function article($path) {
-		
+		return new Article();
 	}
 	
 	public function deleteArticle($path) {
@@ -37,7 +45,7 @@ class SOSModel implements DBQueries, Settings {
 	}
 	
 	public function category($path) {
-		
+		return '<br>THIS IS THE MODEL CATEGORY '.$path.'<br>';
 	}
 	
 	public function deleteCategory() {
@@ -56,8 +64,7 @@ class SOSModel implements DBQueries, Settings {
 		
 	}
 	
-	public function changeUserSetting($userID, $setting, $value) {
-		
+	public function changeUserSetting($userID, $setting, $value) {		
 	}
 	
 	private $dbconn;	
