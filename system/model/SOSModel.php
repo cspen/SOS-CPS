@@ -20,10 +20,31 @@ class SOSModel implements DBQueries, Settings {
 	 * of this web application.
 	 */
 	public function home() {
-		echo '<br>THIS IS THE MODEL HOME<br>';
+		$stmt = $this->dbconn->prepare(DBQueries::HOME_QUERY);
+		if($stmt->execute()) {
+			$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			
+			$articles = array();
+			foreach($results as $r) {
+				$articles[] = str_replace("-", " ", $r['article_path']);
+			}
+			
+			$art =  new Article(
+					Settings::SITE_TITLE,
+					Settings::HOME_PAGE_DESCRIPTION,
+					Settings::HOME_PAGE_TITLE,
+					$articles,
+					"Topics Menu",
+					$this->getSideMenu());
+		} else {
+			$this->error = true;
+		}
 	}
 	
 	public function article($path) {
+		// Need to get data from DB
+		// then put the data in Article object
+		// Return the Article object (or null)
 		return new Article();
 	}
 	
