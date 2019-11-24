@@ -28,14 +28,7 @@ class SOSModel implements DBQueries, Settings {
 			foreach($results as $r) {
 				$articles[] = str_replace("-", " ", $r['article_path']);
 			}
-			
-			$art =  new Article(
-					Settings::SITE_TITLE,
-					Settings::HOME_PAGE_DESCRIPTION,
-					Settings::HOME_PAGE_TITLE,
-					$articles,
-					"Topics Menu",
-					$this->getSideMenu());
+			print_r($articles);
 		} else {
 			$this->error = true;
 		}
