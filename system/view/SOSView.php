@@ -15,11 +15,7 @@ class SOSView implements Settings {
 	/**
 	 * Send the response to the client.
 	 */
-	public function output($object) {
-		if(!empty($object)) {
-			echo $object;
-		}
-		
+	public function output() {		
 		$pageTitle = "*Page Title*";
 		$description = "Page Description";
 		$contentTitle = $pageTitle;
@@ -38,6 +34,10 @@ class SOSView implements Settings {
 		
 		// Display the page
 		echo $html;
+	}
+	
+	public function setArticle($article) {
+		$this->article = $article;
 	}
 	
 	/**
@@ -59,7 +59,7 @@ class SOSView implements Settings {
 		SOSView::ADMIN_LOGIN;
 	}
 		
-	
+	private $article;
 	
 	// Default view settings
 	const HOME = "templates/home_template.php";
