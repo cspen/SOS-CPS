@@ -28,7 +28,7 @@ class SOSModel implements DBQueries, Settings {
 			foreach($results as $r) {
 				$articles[] = str_replace("-", " ", $r['article_path']);
 			}
-			print_r($articles);
+			// print_r($articles);
 		} else {
 			$this->error = true;
 		}
@@ -38,6 +38,16 @@ class SOSModel implements DBQueries, Settings {
 		// Need to get data from DB
 		// then put the data in Article object
 		// Return the Article object (or null)
+		$stmt = $this->dbconn->prepare(DBQueries::PATH_QUERY);
+		$stmt->bindParam(':path', $path);
+		
+		if($stmt->execute()) {
+			$results = $stmt->fetch();
+			
+			if(!empty($results)) { 
+				
+			}
+		}
 		return new Article();
 	}
 	
