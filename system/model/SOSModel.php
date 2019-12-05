@@ -44,7 +44,25 @@ class SOSModel implements DBQueries, Settings {
 		if($stmt->execute()) {
 			$results = $stmt->fetch();
 			
-			if(!empty($results)) { 
+			$id, $title, $description,
+			$body, $publishStatus, $publishDate, $creationDate,
+			$path, $parent, $etag, $lastModified
+			
+			if(!empty($results)) {
+				$menu = $this->getSideMenu();
+				$this->output = new Article(
+						$results['articleID'],
+						$results['article_title'],
+						$results['article_description'],
+						$results['article_body'],
+						$results['article_publish_status'].
+						$results['article_publish_date'],
+						$results['article_creation_date'],
+						$path,
+						$results['article_parent'],
+						$results['etag'],
+						$results['last_modified']);
+			}
 				
 			}
 		}
